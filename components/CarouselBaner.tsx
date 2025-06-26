@@ -662,15 +662,6 @@ export default function ResponsiveAnimatedCarousel() {
                         />
                     ))}
                 </div>
-
-                <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    className="bg-white/20 border-white/30 text-white hover:bg-white/30 p-2"
-                >
-                    {isPlaying ? <Pause className="w-3 h-3 sm:w-4 sm:h-4" /> : <Play className="w-3 h-3 sm:w-4 sm:h-4" />}
-                </Button>
             </div>
 
             {/* Botones de navegación responsivos */}
