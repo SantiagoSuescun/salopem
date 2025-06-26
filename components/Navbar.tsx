@@ -17,7 +17,7 @@ function Navbar() {
         <nav id='inicio' className="w-full px-4 md:px-8 py-4 bg-white shadow flex items-center justify-between relative z-50">
             {/* Logo a la izquierda */}
             <div className="flex items-center gap-4">
-                <Image src={"/images/webp/Logo.webp"} alt="logo" width={100} height={50} className="md:w-[120px] md:h-[60px] w-[90px] h-[40px] object-contain" />
+                <Image src={"/images/webp/Logo.webp"} alt="logo" width={100} height={50} className="md:w-[160px] md:h-[60px] w-[90px] h-[40px] object-contain" />
             </div>
             {/* Menú centrado (desktop) */}
             <div className="hidden lg:flex gap-2 relative">

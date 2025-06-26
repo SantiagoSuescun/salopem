@@ -77,7 +77,7 @@ export default function BannerTest() {
         '10-removebg-preview.webp',
     ];
     return (
-        <div ref={ref} className="w-full overflow-hidden relative my-6 min-h-[320px] lg:min-h-[380px] flex max-lg:flex-col items-end justify-center bg-gradient-to-br from-purple-700 via-purple-500 to-indigo-500">
+        <div ref={ref} className="w-full overflow-hidden relative my-6 min-h-[320px] lg:min-h-[380px] flex max-lg:flex-col items-end justify-center bg-gradient-to-br from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD]">
             <div className="flex flex-row items-center justify-center lg:justify-between w-full h-full gap-2  px-2  ">
                 {/* Mujer a la izquierda, alineada abajo */}
                 <motion.div

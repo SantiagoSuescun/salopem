@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, easeOut } from "fra
 import { ChevronLeft, ChevronRight, Play, Pause, Star, Heart, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { FaYoutube, FaTiktok, FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 interface Slide {
     id: number
@@ -463,6 +464,21 @@ export default function ResponsiveAnimatedCarousel() {
 
     return (
         <div className="relative w-full h-[670px] sm:h-[600px] md:h-[650px] lg:h-[670px] overflow-visible rounded-xl lg:rounded-2xl shadow-xl lg:shadow-2xl">
+            {/* Iconos de redes sociales en la esquina superior derecha */}
+            <div className="absolute right-0 top-12 z-30 flex flex-col gap-3 items-end pr-4">
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="group">
+                    <FaYoutube size={32} style={{ color: '#7C3AED', background: '#FFEBD8', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="group">
+                    <FaTiktok size={32} style={{ color: '#7C3AED', background: '#cacdcb', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="group">
+                    <FaInstagram size={32} style={{ color: '#7C3AED', background: '#FFEBD8', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="group">
+                    <FaFacebookF size={32} style={{ color: '#7C3AED', background: '#ABA596', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                </a>
+            </div>
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={currentSlide}
