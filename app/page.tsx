@@ -17,16 +17,16 @@ export default function Home() {
     <>
       <Navbar />
       <AnimatedCarousel />
-      <EspadaLaserBarra text="Test Capilar" />
+      <EspadaLaserBarra text="Test Capilar" id="Ciudado" />
       <BannerTest />
-      <EspadaLaserBarra text="Nuestras Categorias" />
+      <EspadaLaserBarra text="Nuestras Categorias" id="tienda" />
       <TestCapilar />
-      <EspadaLaserBarra text="Sobre Nosotros" />
+      <EspadaLaserBarra text="Sobre Nosotros" id="about" />
       <About />
       <Services />
-      <EspadaLaserBarra text=" Nuestros Productos" />
+      <EspadaLaserBarra text=" Nuestros Productos" id="product" />
       <Component />
-      <EspadaLaserBarra text="Blog" />
+      <EspadaLaserBarra text="Blog" id="blog" />
       <Blog />
       <EspadaLaserBarra text="Instagram" />
       <InstagramGallery />

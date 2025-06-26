@@ -12,8 +12,8 @@ export const nav = [
     url: "#tienda",
   },
   {
-    name: "Servicios",
-    url: "#services",
+    name: "Productos",
+    url: "#product",
   },
   {
     name: "Blog",

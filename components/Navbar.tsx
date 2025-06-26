@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from './ui/button'
 import { useCartStore } from "@/lib/cartStore"
+import Link from 'next/link'
 
 function Navbar() {
     const [active, setActive] = useState(nav[0].url)
@@ -13,7 +14,7 @@ function Navbar() {
     const cartCount = useCartStore(state => state.getCount())
 
     return (
-        <nav className="w-full px-4 md:px-8 py-4 bg-white shadow flex items-center justify-between relative z-50">
+        <nav id='inicio' className="w-full px-4 md:px-8 py-4 bg-white shadow flex items-center justify-between relative z-50">
             {/* Logo a la izquierda */}
             <div className="flex items-center gap-4">
                 <Image src={"/images/webp/Logo.webp"} alt="logo" width={100} height={50} className="md:w-[120px] md:h-[60px] w-[90px] h-[40px] object-contain" />
@@ -21,7 +22,8 @@ function Navbar() {
             {/* Menú centrado (desktop) */}
             <div className="hidden lg:flex gap-2 relative">
                 {nav.map((item) => (
-                    <div
+                    <Link
+                        href={item.url}
                         key={item.url}
                         className="relative flex flex-col items-center"
                         onMouseEnter={() => setHovered(item.url)}
@@ -48,7 +50,7 @@ function Navbar() {
                                 />
                             )}
                         </AnimatePresence>
-                    </div>
+                    </Link>
                 ))}
             </div>
             {/* Menú hamburguesa (mobile) */}

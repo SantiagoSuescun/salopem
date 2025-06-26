@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useState, useRef } from 'react';
 
-export default function EspadaLaserBarra(text: { text: string }) {
+export default function EspadaLaserBarra({ text, id }: { text: string; id?: string }) {
   const [barsDone, setBarsDone] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -12,7 +12,11 @@ export default function EspadaLaserBarra(text: { text: string }) {
   const showTitle = barsDone >= 2;
 
   return (
-    <div ref={ref} className="flex flex-col justify-center items-center bg-white h-20 my-12">
+    <div
+      ref={ref}
+      id={id}
+      className="flex flex-col justify-center items-center bg-white h-20 my-12"
+    >
       {isInView && (
         <>
           {/* Título animado desde la barra */}
@@ -23,7 +27,7 @@ export default function EspadaLaserBarra(text: { text: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
-              {text.text}
+              {text}
             </motion.h2>
           )}
           {/* Barra animada */}
