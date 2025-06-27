@@ -467,16 +467,24 @@ export default function ResponsiveAnimatedCarousel() {
             {/* Iconos de redes sociales en la esquina superior derecha */}
             <div className="absolute right-0 top-12 z-30 flex flex-col gap-3 items-end pr-4">
                 <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="group">
-                    <FaYoutube size={32} style={{ color: '#7C3AED', background: '#FFEBD8', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                    <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+                        <FaYoutube size={28} className="text-purple-500" />
+                    </div>
                 </a>
                 <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="group">
-                    <FaTiktok size={32} style={{ color: '#7C3AED', background: '#cacdcb', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                    <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+                        <FaTiktok size={28} className="text-purple-500" />
+                    </div>
                 </a>
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="group">
-                    <FaInstagram size={32} style={{ color: '#7C3AED', background: '#FFEBD8', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                    <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+                        <FaInstagram size={28} className="text-purple-500" />
+                    </div>
                 </a>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="group">
-                    <FaFacebookF size={32} style={{ color: '#7C3AED', background: '#ABA596', borderRadius: '50%', padding: 4, boxShadow: '0 2px 8px #7C3AED22' }} className="transition-transform group-hover:scale-110" />
+                    <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+                        <FaFacebookF size={28} className="text-purple-500" />
+                    </div>
                 </a>
             </div>
             <AnimatePresence initial={false} custom={direction}>
