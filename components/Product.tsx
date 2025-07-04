@@ -211,7 +211,7 @@ export default function ProductCarousel() {
                 </div>
                 <div className="w-full flex justify-center">
                   <Button
-                    className="mt-2 px-6 py-1 bg-[#2a9d8f] hover:bg-[#268a7e] text-white font-semibold rounded-lg text-xs"
+                    className="mt-2 px-6 py-1 bg-purple-500 hover:bg-purple-500 text-white font-semibold rounded-lg text-xs"
                     onClick={() =>
                       addProduct({
                         id: product.id,
