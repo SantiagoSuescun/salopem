@@ -107,7 +107,7 @@ export default function BannerTest() {
                         "¿Cuál es la fórmula  ideal <br /> para tu cabello?"
                     </h1>
                     <Button className="cursor-pointer px-8 py-4 mt-4 rounded-full text-base md:text-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200">
-                        Haz el test capilar
+                        "Haz el test capilar"
                     </Button>
                 </motion.div>
                 {/* Productos alineados horizontalmente, pegados, a la derecha */}

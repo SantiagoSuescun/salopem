@@ -1,5 +1,6 @@
 import { Phone, MapPin, Mail } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Footer() {
     return (
@@ -74,6 +75,47 @@ export default function Footer() {
                                     contactosalopem@gmail.com
                                 </span>
                             </div>
+                            <section
+                                className="relative w-[90%] mx-auto min-h-[180px] md:min-h-[100px] -ml-6 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#6330A5] via-[#E6DBF8] to-[#E0C4FF] rounded-3xl shadow-xl mb-12 select-none"
+                            >
+                                {/* Fondos difusos animados (opcional, puedes dejar solo el gradiente si prefieres) */}
+                                {/* Copa, texto y logo alineados horizontalmente y centrados */}
+                                <div className="relative z-10 flex flex-row items-center justify-center gap-4 py-4 w-full">
+                                    {/* SVG Copa pequeña sin animación */}
+                                    <svg width="28" height="28" viewBox="0 0 68 68" fill="none">
+                                        <circle cx="34" cy="34" r="33" fill="#fff" fillOpacity="0.93" />
+                                        <ellipse cx="34" cy="22" rx="19" ry="12" fill="#FFD700" fillOpacity="0.98" />
+                                        <ellipse cx="34" cy="25.5" rx="13.5" ry="8.5" fill="#FFF6C1" />
+                                        <path d="M20 22 C22 42, 46 42, 48 22" stroke="#FFD700" strokeWidth="4" fill="none" />
+                                        <rect x="30" y="34" width="8" height="20" rx="4" fill="#6330A5" />
+                                        <rect x="26" y="54" width="16" height="6" rx="3" fill="#8C5FC0" />
+                                        <ellipse cx="34" cy="60" rx="8" ry="2.5" fill="#C4A2F8" />
+                                    </svg>
+                                    {/* Texto pequeño con color original */}
+                                    <span
+                                        className="font-extrabold text-center tracking-tight"
+                                        style={{
+                                            fontSize: 'clamp(0.8rem, 1.5vw, 1.1rem)',
+                                            color: '#2E124E',
+                                            textShadow: '0 1px 4px #B595F2, 0 1px 0 #fff',
+                                            display: 'inline-block',
+                                            whiteSpace: 'nowrap'
+                                        }}
+                                    >
+                                        Móving for <br />
+                                         Innovation
+                                    </span>
+                                    {/* Logo Salopem pequeño */}
+                                    <Image
+                                        src="/images/webp/Logo Salopem.webp"
+                                        alt="Logo Salopem"
+                                        width={32}
+                                        height={24}
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                            </section>
                         </div>
                     </div>
 
