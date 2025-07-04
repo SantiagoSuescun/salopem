@@ -9,6 +9,7 @@ import SocialPhones from "@/components/gallery";
 import InstagramGallery from "@/components/gallery";
 import Navbar from "@/components/Navbar";
 import Component from "@/components/Product";
+import SalopemBanner from "@/components/SalopemBanner";
 import Services from "@/components/Services";
 import ResponsiveAnimatedCarousel from "@/components/TestCapilar";
 import TestCapilar from "@/components/TestCapilar";
@@ -31,6 +32,7 @@ export default function Home() {
       <Blog />
       <EspadaLaserBarra text="Síguenos en nuestras redes" />
       <SocialPhones />
+      <SalopemBanner />
       <Footer />
     </>
   );

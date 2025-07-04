@@ -145,7 +145,7 @@ export default function ProductCarousel() {
   return (
     <section className="w-full flex flex-col items-center justify-center overflow-hidden p-4">
       <div
-        className="relative w-full max-w-6xl flex items-center justify-center"
+        className="relative w-full max-w-[80%] flex items-center justify-center"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -185,7 +185,7 @@ export default function ProductCarousel() {
             {extended.map((product, i) => (
               <div
                 key={`slide-${product.id}-${i}`}
-                className="w-64 h-[340px] max-md:ml-[9px] shadow-md shadow-gray-400/20 p-4 bg-[#ebfaf9ff] rounded-2xl flex flex-col items-center justify-between flex-shrink-0"
+                className="w-64 h-[390px] max-md:ml-[9px] shadow-md shadow-gray-400/20 p-4 bg-[#ebfaf9ff] rounded-2xl flex flex-col items-center justify-between flex-shrink-0"
               >
                 <div className="relative w-56 h-40 mb-2">
                   <Image
@@ -197,11 +197,11 @@ export default function ProductCarousel() {
                   />
                 </div>
                 <div className="text-center flex flex-col gap-2 flex-1 justify-end">
-                  <span className="font-bold text-base text-gray-800 truncate">
+                  <span className="font-bold text-[19px]  text-gray-800 truncate">
                     {product.name}
                   </span>
                   {product.description && (
-                    <p className="text-sm text-gray-600 h-10">
+                    <p className="text-lg text-gray-600 py-2">
                       {product.description}
                     </p>
                   )}

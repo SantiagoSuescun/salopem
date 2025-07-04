@@ -103,43 +103,41 @@ export default function TestCapilar() {
                     <motion.div
                         drag="x"
                         dragConstraints={{ right: 0, left: -width }}
-                        className="flex p-4 flex-col lg:flex-row items-center justify-center min-w-full"
+                        className="flex flex-col lg:flex-row items-center justify-center min-w-0 gap-y-10 gap-x-12 w-full"
                     >
                         {recommendedProducts.map((product, index) => (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className="w-[240px] md:w-[280px] flex-shrink-0 flex flex-col items-center"
+                                className="flex-shrink-0 flex flex-col items-center max-w-sm w-[90vw] md:w-[28vw]"
                             >
-                                <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center">
+                                <div className="relative w-full h-[40vw] max-h-[420px] min-h-[60px] flex items-center justify-center">
                                     <motion.div
-                                        className="absolute bottom-0 w-[200px] h-[200px] md:w-[240px] md:h-[240px] bg-gradient-to-br from-violet-200 to-purple-300 rounded-[40px] shadow-xl"
+                                        className="absolute bottom-0 w-[70%] h-[70%] bg-gradient-to-br from-violet-200 to-purple-300 rounded-[40px] shadow-xl"
                                         whileHover={{ scale: 1.05, boxShadow: '0 20px 40px -10px rgba(139, 92, 246, 0.3)' }}
                                     />
-
                                     <motion.div
-                                        className="absolute w-[240px] h-[240px] md:w-[280px] md:h-[280px]"
-                                        whileHover={{ scale: 1.15, rotate: 3 }}
+                                        className="absolute w-full h-full"
+                                        whileHover={{ scale: 0.9, rotate: 3 }}
                                         transition={{ type: 'spring', stiffness: 300 }}
                                     >
                                         <Image
                                             src={product.image}
                                             alt={product.name}
-                                            layout="fill"
-                                            objectFit="contain"
-                                            className="drop-shadow-2xl"
+                                            fill
+                                            className="object-contain drop-shadow-2xl"
+                                            sizes="(max-width: 668px) 80vw, 28vw"
                                         />
                                     </motion.div>
                                 </div>
-
-                                <div className="text-center mt-6 flex flex-col items-center justify-start h-[200px] w-full">
-                                    <div className="relative w-[140px] h-[80px]">
-                                        <Image src={product.logo} alt={`${product.name} logo`} layout="fill" objectFit="contain" />
+                                <div className="text-center mt-8 flex flex-col items-center justify-start w-full">
+                                    <div className="relative w-[10vw] min-w-[120px] h-[60px]">
+                                        <Image src={product.logo} alt={`${product.name} logo`} fill className="object-contain" />
                                     </div>
-                                    <h3 className="text-lg md:text-xl mt-4 font-bold text-purple-900 px-2 leading-tight">
+                                    <h3 className="text-2xl md:text-3xl mt-6 font-bold text-purple-900 px-2 leading-tight">
                                         {product.name}
                                     </h3>
-                                    <span className="text-base md:text-lg font-medium text-purple-700 uppercase mt-1">{product.category}</span>
+                                    <span className="text-lg md:text-xl font-medium text-purple-700 uppercase mt-2">{product.category}</span>
                                 </div>
                             </motion.div>
                         ))}

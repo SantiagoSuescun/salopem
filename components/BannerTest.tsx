@@ -14,7 +14,7 @@ function ProductosSuperpuestos({ imagenes }: { imagenes: string[] }) {
                 alt={imagenes[0]}
                 width={320}
                 height={220}
-                className=" absolute bottom-4 right-0"
+                className=" absolute bottom-4 -right-4"
                 style={{ display: 'block', borderRadius: 0, margin: 0, padding: 0, boxShadow: 'none' }}
             />
 
@@ -23,7 +23,7 @@ function ProductosSuperpuestos({ imagenes }: { imagenes: string[] }) {
                 alt={imagenes[1]}
                 width={320}
                 height={220}
-                className="absolute bottom-4 right-[80] "
+                className="absolute bottom-4 right-[68] "
                 style={{ display: 'block', borderRadius: 0, margin: 0, padding: 0, boxShadow: 'none' }}
             />
 
@@ -32,7 +32,7 @@ function ProductosSuperpuestos({ imagenes }: { imagenes: string[] }) {
                 alt={imagenes[2]}
                 width={320}
                 height={220}
-                className="absolute bottom-4 right-[162]"
+                className="absolute bottom-4 right-[140]"
                 style={{ display: 'block', borderRadius: 0, margin: 0, padding: 0, boxShadow: 'none' }}
             />
 
@@ -84,7 +84,7 @@ export default function BannerTest() {
                     initial={{ opacity: 0, x: -80 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 1, ease: 'easeOut' }}
-                    className="max-lg:hidden flex-shrink-0 w-[160px] md:w-[200px] lg:w-[380px] h-auto z-20 flex items-end"
+                    className="max-lg:hidden flex-shrink-0 w-[160px] md:w-[200px] lg:w-[380px] h-auto z-20 "
                     style={{ alignSelf: 'flex-end' }}
                 >
                     <Image
@@ -101,13 +101,13 @@ export default function BannerTest() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-                    className=" flex flex-col items-center justify-center text-center lg:-ml-35 "
+                    className=" flex flex-col items-center justify-center text-center lg:-ml-20 m-10 "
                 >
-                    <h1 className="text-4xl md:text-8xl font-bold text-white mb-4 text-center ">
-                        "Tu diagnóstico <br /> está listo"
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center xl:text-7xl">
+                        "¿Cuál es la fórmula  ideal <br /> para tu cabello?"
                     </h1>
-                    <Button className="cursor-pointer px-8 py-4 rounded-full text-base md:text-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200">
-                        ¡Solicítalo ya!
+                    <Button className="cursor-pointer px-8 py-4 mt-4 rounded-full text-base md:text-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200">
+                        Haz el test capilar
                     </Button>
                 </motion.div>
                 {/* Productos alineados horizontalmente, pegados, a la derecha */}

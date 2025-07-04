@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, Facebook } from "lucide-react";
-import { BsTiktok } from "react-icons/bs";
+import { BsInstagram, BsFacebook, BsTiktok } from "react-icons/bs";
 
 const cards = [
     {
@@ -46,7 +45,7 @@ const cards = [
 
 export default function Blog() {
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {cards.map((card, idx) => {
                     const ref = useRef(null);
@@ -73,7 +72,7 @@ export default function Blog() {
                                 </Badge>
                             </div>
                             {/* Image */}
-                            <div className="relative h-48 w-full overflow-hidden">
+                            <div className="relative h-64 w-full overflow-hidden">
                                 <Image
                                     src={card.image}
                                     alt={card.title}
@@ -99,7 +98,7 @@ export default function Blog() {
                                             aria-label="Instagram"
                                             className="rounded-full p-2 transition-all duration-200 bg-pink-100 hover:bg-pink-200 text-pink-600 hover:scale-110"
                                         >
-                                            <Instagram size={22} />
+                                            <BsInstagram size={22} />
                                         </a>
                                     )}
                                     {card.facebookUrl && (
@@ -110,7 +109,7 @@ export default function Blog() {
                                             aria-label="Facebook"
                                             className="rounded-full p-2 transition-all duration-200 bg-blue-100 hover:bg-blue-200 text-blue-600 hover:scale-110"
                                         >
-                                            <Facebook size={22} />
+                                            <BsFacebook size={22} />
                                         </a>
                                     )}
                                     {card.tiktokUrl && (

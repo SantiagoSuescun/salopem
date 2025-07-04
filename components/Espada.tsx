@@ -22,7 +22,7 @@ export default function EspadaLaserBarra({ text, id }: { text: string; id?: stri
           {/* Título animado desde la barra */}
           {showTitle && (
             <motion.h2
-              className="text-3xl font-bold text-purple-700 mb-6 uppercase"
+              className="text-4xl font-bold text-purple-700 mb-6 uppercase"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}

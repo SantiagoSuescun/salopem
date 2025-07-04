@@ -19,7 +19,7 @@ function Navbar() {
             className="w-full  px-2 md:px-8 py-4 bg-white shadow flex items-center justify-between relative z-50"
         >
             {/* Logo a la izquierda */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center pl-4">
                 <Image
                     src={"/images/webp/Logo.webp"}
                     alt="logo"
@@ -30,7 +30,7 @@ function Navbar() {
             </div>
             {/* Menú centrado (desktop), visible siempre, scrollable si es necesario */}
             <div className="hidden xl:flex relative flex-1 justify-center">
-                <div className="flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-purple-200 scrollbar-track-transparent">
+                <div className="flex gap-3 xl:gap-2 2xl:gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-purple-200 scrollbar-track-transparent">
                     {nav.map((item) => (
                         <Link
                             href={item.url}

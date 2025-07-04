@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, Play, Pause, Star, Heart, ShoppingBag } from
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { FaYoutube, FaTiktok, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { BsWhatsapp } from "react-icons/bs"
 
 interface Slide {
   id: number
@@ -465,23 +466,28 @@ export default function ResponsiveAnimatedCarousel() {
       {/* Iconos de redes sociales en la esquina superior derecha */}
       <div className="fixed right-0 top-28 z-30 flex flex-col gap-3 items-end pr-4">
         <a href="https://www.youtube.com/@salopem" target="_blank" rel="noopener noreferrer" className="group">
-          <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
-            <FaYoutube size={28} className="text-purple-500" />
+          <div className="bg-[#FF0000] rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+            <FaYoutube size={28} className="text-white" />
           </div>
         </a>
         <a href="https://www.tiktok.com/@salopem" target="_blank" rel="noopener noreferrer" className="group">
-          <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
-            <FaTiktok size={28} className="text-purple-500" />
+          <div className="bg-black rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+            <FaTiktok size={28} className="text-white" />
           </div>
         </a>
         <a href="https://www.instagram.com/salopem_" target="_blank" rel="noopener noreferrer" className="group">
-          <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
-            <FaInstagram size={28} className="text-purple-500" />
+          <div className="bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+            <FaInstagram size={28} className="text-white" />
           </div>
         </a>
         <a href="https://www.facebook.com/Salopem1" target="_blank" rel="noopener noreferrer" className="group">
-          <div className="bg-violet-100 rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
-            <FaFacebookF size={28} className="text-purple-500" />
+          <div className="bg-[#1877F3] rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+            <FaFacebookF size={28} className="text-white" />
+          </div>
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group">
+          <div className="bg-[#25D366] rounded-full p-1.5 shadow-md transition-transform group-hover:scale-110">
+            <BsWhatsapp size={28} className="text-white" />
           </div>
         </a>
       </div>
