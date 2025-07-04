@@ -141,6 +141,21 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Insignia tipo badge con estrella */}
+                <div className="flex justify-center mb-6">
+                    <span className="inline-flex items-center gap-2 bg-white/90 border border-yellow-200 px-4 py-2 rounded-xl shadow text-xs font-semibold text-purple-800">
+                        <svg
+                            className="w-5 h-5 text-yellow-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true"
+                        >
+                            <path d="M10 2.5l2.39 5.18 5.68.49c.51.04.72.68.31 1.01l-4.36 3.74 1.33 5.59c.12.49-.43.88-.86.61L10 15.35l-4.49 2.77c-.43.27-.97-.12-.86-.61l1.33-5.59-4.36-3.74a.61.61 0 01.31-1.01l5.68-.49L10 2.5z" />
+                        </svg>
+                        Ganadores de Móving for Innovation
+                    </span>
+                </div>
+
                 {/* Copyright */}
                 <div className="mt-6 pt-6 border-t border-purple-500">
                     <div className="flex flex-col md:flex-row justify-between items-center text-xs text-purple-300">

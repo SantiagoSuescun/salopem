@@ -13,16 +13,16 @@ function About() {
                 viewport={{ once: true }}
                 className="flex-1 bg-[#2bccc7ff] max-lg:p-6 rounded-2xl shadow-lg max-w-xl w-full h-[300px] lg:h-[400px] flex items-center justify-center"
             >
-                <div className="flex flex-col justify-center  h-full w-full px-4 md:px-8">
-                    <p className="mb-2 text-base md:text-xl leading-relaxed text-white ">
+                <div className="flex flex-col justify-center  h-full w-full px-4 md:px-8 text-black">
+                    <p className="mb-2 text-base md:text-xl leading-relaxed  ">
                         Salopém venta y fabricación productos capilares.<br />
                         Nos enfocamos en brindar soluciones innovadoras para el cuidado del cabello, combinando ingredientes naturales y tecnología para garantizar resultados efectivos y saludables.
                     </p>
-                    <p className="mb-2 text-base md:text-xl leading-relaxed text-white ">
+                    <p className="mb-2 text-base md:text-xl leading-relaxed  ">
                         Cuidamos tu cabello, transformamos tu imagen.<br />
                         Fusionamos naturaleza y tecnología para crear productos capilares únicos, hechos para ti.
                     </p>
-                    <p className="text-base md:text-xl font-bold mt-2" style={{ color: '#03736fff' }}>
+                    <p className="text-base md:text-xl font-bold mt-2" >
                         ¡Tu camino hacia un cabello saludable comienza aquí!
                     </p>
                 </div>

@@ -25,12 +25,6 @@ const recommendedProducts = [
         name: 'Tu Cabello, tu formula, ',
         category: 'Tu poder',
     },
-    {
-        logo: '/images/webp/Logo Salopem.webp',
-        image: '/images/webp/Productos Salopem 2.webp',
-        name: 'Línea Salopem',
-        category: 'Hidratación Superior',
-    },
 ];
 
 export default function TestCapilar() {
@@ -109,7 +103,7 @@ export default function TestCapilar() {
                     <motion.div
                         drag="x"
                         dragConstraints={{ right: 0, left: -width }}
-                        className="flex p-4 flex-col lg:flex-row items-center justify-between min-w-full"
+                        className="flex p-4 flex-col lg:flex-row items-center justify-center min-w-full"
                     >
                         {recommendedProducts.map((product, index) => (
                             <motion.div

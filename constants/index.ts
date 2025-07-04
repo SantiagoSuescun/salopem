@@ -1,26 +1,10 @@
 export const nav = [
-  {
-    name: "Inicio",
-    url: "#inicio",
-  },
-  {
-    name: "Cuidado Capilar",
-    url: "#Ciudado",
-  },
-  {
-    name: "Tienda",
-    url: "#tienda",
-  },
-  {
-    name: "Productos",
-    url: "#product",
-  },
-  {
-    name: "Blog",
-    url: "#blog",
-  },
-  {
-    name: "Sobre Nosotros",
-    url: "#about",
-  },
+  { name: "Cuidado capilar", url: "#cuidado-capilar" },
+  { name: "Tienda", url: "#tienda" },
+  { name: "Productos", url: "#productos" },
+  { name: "Test capilar", url: "#test-capilar" },
+  { name: "Sobre Nosotras", url: "#sobre-nosotras" },
+  { name: "Blog", url: "#blog" },
+  { name: "Mayoristas", url: "#mayoristas" },
+  { name: "Maquila", url: "#maquila" },
 ];

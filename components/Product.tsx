@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -14,7 +14,7 @@ interface Product {
   image: string
   color: string
   gradient: string
-  description?: string;
+  description?: string
 }
 
 const products: Product[] = [
@@ -74,20 +74,21 @@ const products: Product[] = [
   },
 ];
 
-const CARD_WIDTH = 256; // w-64
-const GAP = 24; // gap-6
-const VISIBLE = 4;
+const CARD_WIDTH = 256;
+const GAP = 24;
+const VISIBLE = 4; // Cambia según diseño
 
 export default function ProductCarousel() {
-  // Duplicamos productos al inicio y final para bucle infinito
+  // Carrusel extendido con clones al inicio y final
   const extended = [
     ...products.slice(-VISIBLE),
     ...products,
-    ...products.slice(0, VISIBLE)
+    ...products.slice(0, VISIBLE),
   ];
-  const [pos, setPos] = useState(VISIBLE); // posición real en el array extendido
+  const [pos, setPos] = useState(VISIBLE);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [noTransition, setNoTransition] = useState(false); // Para el "reset" instantáneo
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const total = products.length;
   const addProduct = useCartStore((state) => state.addProduct);
@@ -104,31 +105,41 @@ export default function ProductCarousel() {
     };
   }, [pos, total, isPaused]);
 
-  // Cuando llegamos a un clon, reseteamos sin animación
+  // El reset profesional: SIN transición
   useEffect(() => {
     if (!isAnimating) return;
-
-    const handleAnimationEnd = () => {
-      if (pos === extended.length - VISIBLE) {
+    if (pos === extended.length - VISIBLE) {
+      setTimeout(() => {
+        setNoTransition(true);
         setPos(VISIBLE);
-      } else if (pos === 0) {
+      }, 350);
+    } else if (pos === 0) {
+      setTimeout(() => {
+        setNoTransition(true);
         setPos(total);
-      }
-      setIsAnimating(false);
-    };
-
-    const timer = setTimeout(handleAnimationEnd, 350);
-    return () => clearTimeout(timer);
-
+      }, 350);
+    } else {
+      setTimeout(() => setIsAnimating(false), 350);
+    }
   }, [pos, isAnimating, total, extended.length]);
+
+  // Cuando cambia la posición SIN transición, reactivamos transición después de pintar
+  useEffect(() => {
+    if (noTransition) {
+      setTimeout(() => {
+        setNoTransition(false);
+        setIsAnimating(false);
+      }, 30); // 30ms es suficiente para el reset visual
+    }
+  }, [noTransition]);
 
   const handleMove = (dir: number) => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setPos(prev => prev + dir);
+    setPos((prev) => prev + dir);
   };
 
-  // Calcular el desplazamiento
+  // Desplazamiento
   const x = -pos * (CARD_WIDTH + GAP);
 
   return (
@@ -138,18 +149,18 @@ export default function ProductCarousel() {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Flechas */}
+        {/* Flechas separadas */}
         <Button
           onClick={() => handleMove(-1)}
           size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
+          className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
         >
           <ChevronLeft />
         </Button>
         <Button
           onClick={() => handleMove(1)}
           size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
+          className="absolute right-[-60px] top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
         >
           <ChevronRight />
         </Button>
@@ -157,75 +168,64 @@ export default function ProductCarousel() {
           <motion.div
             className="flex gap-6 py-4"
             animate={{ x }}
-            transition={{
-              x: {
-                type: isAnimating ? "spring" : false,
-                stiffness: 300,
-                damping: 40,
-                duration: 0.35,
-              },
-            }}
+            transition={
+              noTransition
+                ? { duration: 0 }
+                : {
+                    x: {
+                      type: isAnimating ? "spring" : false,
+                      stiffness: 300,
+                      damping: 40,
+                      duration: 0.35,
+                    },
+                  }
+            }
             style={{ willChange: "transform" }}
           >
-            {extended.map((product, i) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-              return (
-                <motion.div
-                  ref={ref}
-                  key={`slide-${product.id}-${i}`}
-                  className={`w-64 h-[340px] max-md:ml-[9px] shadow-md shadow-gray-400/20 p-4 bg-[#ebfaf9ff] rounded-2xl flex flex-col items-center justify-between  flex-shrink-0`}
-                  initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                  transition={{ duration: 0.6, delay: i * 0.08, type: "spring" }}
-                  whileHover={{
-                    scale: 1.06,
-                    y: -10,
-                    boxShadow: "0 12px 32px rgba(147, 51, 234, 0.18)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <div className="relative w-56 h-40 mb-2">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain drop-shadow-xl"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="text-center flex flex-col gap-2 flex-1 justify-end">
-                    <span className="font-bold text-base text-gray-800 truncate">
-                      {product.name}
-                    </span>
-                    {product.description && (
-                      <p className="text-sm text-gray-600 h-10">
-                        {product.description}
-                      </p>
-                    )}
-                    <span className="text-lg font-bold text-gray-900">
-                      {product.price} COP
-                    </span>
-                  </div>
-                  <div className="w-full flex justify-center">
-                    <Button
-                      className="mt-2 px-6 py-1 bg-[#2a9d8f] hover:bg-[#268a7e] text-white font-semibold rounded-lg text-xs"
-                      onClick={() =>
-                        addProduct({
-                          id: product.id,
-                          name: product.name,
-                          price: product.price,
-                          image: product.image,
-                        })
-                      }
-                    >
-                      Agregar
-                    </Button>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {extended.map((product, i) => (
+              <div
+                key={`slide-${product.id}-${i}`}
+                className="w-64 h-[340px] max-md:ml-[9px] shadow-md shadow-gray-400/20 p-4 bg-[#ebfaf9ff] rounded-2xl flex flex-col items-center justify-between flex-shrink-0"
+              >
+                <div className="relative w-56 h-40 mb-2">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain drop-shadow-xl"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="text-center flex flex-col gap-2 flex-1 justify-end">
+                  <span className="font-bold text-base text-gray-800 truncate">
+                    {product.name}
+                  </span>
+                  {product.description && (
+                    <p className="text-sm text-gray-600 h-10">
+                      {product.description}
+                    </p>
+                  )}
+                  <span className="text-lg font-bold text-gray-900">
+                    {product.price} COP
+                  </span>
+                </div>
+                <div className="w-full flex justify-center">
+                  <Button
+                    className="mt-2 px-6 py-1 bg-[#2a9d8f] hover:bg-[#268a7e] text-white font-semibold rounded-lg text-xs"
+                    onClick={() =>
+                      addProduct({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                      })
+                    }
+                  >
+                    Agregar
+                  </Button>
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>

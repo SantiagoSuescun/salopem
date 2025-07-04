@@ -103,10 +103,10 @@ export default function BannerTest() {
                     transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
                     className=" flex flex-col items-center justify-center text-center lg:-ml-35 "
                 >
-                    <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 text-center ">
+                    <h1 className="text-4xl md:text-8xl font-bold text-white mb-4 text-center ">
                         "Tu diagnóstico <br /> está listo"
                     </h1>
-                    <Button className="px-8 py-3 rounded-full text-base md:text-lg font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200">
+                    <Button className="cursor-pointer px-8 py-4 rounded-full text-base md:text-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200">
                         ¡Solicítalo ya!
                     </Button>
                 </motion.div>

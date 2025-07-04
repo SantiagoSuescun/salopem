@@ -5,6 +5,7 @@ import Blog from "@/components/blog";
 import AnimatedCarousel from "@/components/CarouselBaner";
 import EspadaLaserBarra from "@/components/Espada";
 import Footer from "@/components/footer";
+import SocialPhones from "@/components/gallery";
 import InstagramGallery from "@/components/gallery";
 import Navbar from "@/components/Navbar";
 import Component from "@/components/Product";
@@ -21,15 +22,15 @@ export default function Home() {
       <BannerTest />
       <EspadaLaserBarra text="Nuestras Categorias" id="tienda" />
       <TestCapilar />
-      <EspadaLaserBarra text="Sobre Nosotros" id="about" />
+      <EspadaLaserBarra text="Sobre Nosotras" id="about" />
       <About />
       <Services />
       <EspadaLaserBarra text=" Nuestros Productos" id="product" />
       <Component />
       <EspadaLaserBarra text="Blog" id="blog" />
       <Blog />
-      <EspadaLaserBarra text="Instagram" />
-      <InstagramGallery />
+      <EspadaLaserBarra text="Síguenos en nuestras redes" />
+      <SocialPhones />
       <Footer />
     </>
   );
