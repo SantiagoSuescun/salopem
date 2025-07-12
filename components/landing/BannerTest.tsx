@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 function ProductosSuperpuestos({ imagenes }: { imagenes: string[] }) {
     const ref = useRef<HTMLDivElement>(null);

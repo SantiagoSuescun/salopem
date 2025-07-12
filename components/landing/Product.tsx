@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useCartStore } from "@/lib/cartStore"
+import { useCartStore } from "@/store/cartStore"
 
 interface Product {
   id: number
@@ -145,7 +145,7 @@ export default function ProductCarousel() {
   return (
     <section className="w-full flex flex-col items-center justify-center overflow-hidden p-4">
       <div
-        className="relative w-full max-w-[80%] flex items-center justify-center"
+        className="relative w-full max-w-[84%] flex items-center justify-center"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -153,14 +153,14 @@ export default function ProductCarousel() {
         <Button
           onClick={() => handleMove(-1)}
           size="icon"
-          className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
+          className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-50 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
         >
           <ChevronLeft />
         </Button>
         <Button
           onClick={() => handleMove(1)}
           size="icon"
-          className="absolute right-[-60px] top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
+          className="absolute right-[-40px] top-1/2 -translate-y-1/2 z-50 bg-white/80 hover:bg-white text-[#2a9d8f] rounded-full shadow-lg backdrop-blur-sm"
         >
           <ChevronRight />
         </Button>
@@ -172,13 +172,13 @@ export default function ProductCarousel() {
               noTransition
                 ? { duration: 0 }
                 : {
-                    x: {
-                      type: isAnimating ? "spring" : false,
-                      stiffness: 300,
-                      damping: 40,
-                      duration: 0.35,
-                    },
-                  }
+                  x: {
+                    type: isAnimating ? "spring" : false,
+                    stiffness: 300,
+                    damping: 40,
+                    duration: 0.35,
+                  },
+                }
             }
             style={{ willChange: "transform" }}
           >

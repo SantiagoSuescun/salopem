@@ -1,32 +1,28 @@
 "use client"
-import About from "@/components/about";
-import BannerTest from "@/components/BannerTest";
-import Blog from "@/components/blog";
-import AnimatedCarousel from "@/components/CarouselBaner";
-import EspadaLaserBarra from "@/components/Espada";
-import Footer from "@/components/footer";
-import SocialPhones from "@/components/gallery";
-import InstagramGallery from "@/components/gallery";
-import Navbar from "@/components/Navbar";
-import Component from "@/components/Product";
-import SalopemBanner from "@/components/SalopemBanner";
-import Services from "@/components/Services";
-import ResponsiveAnimatedCarousel from "@/components/TestCapilar";
-import TestCapilar from "@/components/TestCapilar";
+import About from "@/components/landing/about";
+import BannerTest from "@/components/landing/BannerTest";
+import Blog from "@/components/landing/blog";
+import AnimatedCarousel from "@/components/landing/CarouselBaner";
+import EspadaLaserBarra from "@/components/landing/Espada";
+import Footer from "@/components/landing/footer";
+import SocialPhones from "@/components/landing/gallery";
+import Navbar from "@/components/landing/Navbar";
+import Component from "@/components/landing/Product";
+import Services from "@/components/landing/Services";
+import TestCapilar from "@/components/landing/TestCapilar";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <AnimatedCarousel />
       <EspadaLaserBarra text="Test Capilar" id="Ciudado" />
       <BannerTest />
-      <EspadaLaserBarra text="Nuestras Categorias" id="tienda" />
+      <EspadaLaserBarra text="Nuestras Categorias" id="mayoristas" />
       <TestCapilar />
-      <EspadaLaserBarra text="Sobre Nosotras" id="about" />
+      <EspadaLaserBarra text="Sobre Nosotras" id="sobre-nosotras" />
       <About />
       <Services />
-      <EspadaLaserBarra text=" Nuestros Productos" id="product" />
+      <EspadaLaserBarra text=" Nuestros Productos" id="productos" />
       <Component />
       <EspadaLaserBarra text="Blog" id="blog" />
       <Blog />

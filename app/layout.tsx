@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/landing/Navbar";
+import CartHydration from "@/components/landing/cart-hydration";
+import { Toaster } from 'react-hot-toast';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
+const poppins = Poppins({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400"], // O los pesos que necesites, por ejemplo: ["400", "700"]
 });
 
 export const metadata: Metadata = {
@@ -25,9 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={` ${poppins.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <CartHydration />
+        <Navbar />
+        <main className="mt-32">
+
+          {children}
+        </main>
+        <Toaster />
       </body>
     </html>
   );

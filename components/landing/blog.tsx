@@ -88,7 +88,7 @@ export default function Blog() {
                                 <p className="text-gray-700 text-sm leading-relaxed">
                                     {card.description}
                                 </p>
-                                {/* Redes sociales */}
+                                {/* Redes sociales
                                 <div className="flex gap-4 mt-3">
                                     {card.instagramUrl && (
                                         <a
@@ -123,7 +123,7 @@ export default function Blog() {
                                             <BsTiktok size={22} />
                                         </a>
                                     )}
-                                </div>
+                                </div> */}
                             </div>
                         </motion.div>
                     );

@@ -15,7 +15,7 @@ export default function EspadaLaserBarra({ text, id }: { text: string; id?: stri
     <div
       ref={ref}
       id={id}
-      className="flex flex-col justify-center items-center bg-white h-20 my-12"
+      className="flex flex-col justify-center items-center bg-white h-20 my-12 "
     >
       {isInView && (
         <>

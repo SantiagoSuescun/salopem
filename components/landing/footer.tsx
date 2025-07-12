@@ -103,7 +103,9 @@ export default function Footer() {
                                         }}
                                     >
                                         Móving for <br />
-                                         Innovation
+                                        Innovation
+
+
                                     </span>
                                     {/* Logo Salopem pequeño */}
                                     <Image
@@ -115,6 +117,7 @@ export default function Footer() {
                                         priority
                                     />
                                 </div>
+
                             </section>
                         </div>
                     </div>
@@ -189,6 +192,7 @@ export default function Footer() {
                         <p>Desarrollado por Factory Interactive Media</p>
                     </div>
                 </div>
+
             </div>
         </footer>
     );
