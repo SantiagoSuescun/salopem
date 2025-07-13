@@ -229,7 +229,7 @@ export default function ProductDetail() {
               {relatedProducts.map((relatedProduct) => (
                 <Card
                   key={relatedProduct.id}
-                  className="group hover:shadow-lg transition-all duration-300 bg-white border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:scale-105"
+                  className="group hover:shadow-lg p-0 transition-all duration-300 bg-white border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:scale-105"
                   onClick={() => router.push(`/tienda/${relatedProduct.id}`)}
                 >
                   <CardContent className="p-0">

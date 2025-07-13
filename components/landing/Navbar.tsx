@@ -94,34 +94,37 @@ function Navbar() {
           <NavbarMovil />
         </div>
       </nav>
-      <div className="fixed right-0 mt-8 gap-56 z-30 flex flex-col h-screen">
+      <div className="fixed right-0 mt-8 gap-56 z-30 flex flex-col">
         <div className="flex items-center flex-col">
           <Link href="https://www.youtube.com/@salopem" target="_blank" rel="noopener noreferrer" className="group">
             <div className="bg-[#FF0000] p-1.5 shadow-md transition-transform group-hover:scale-110">
-              <FaYoutube size={28} className="text-white" />
+              <FaYoutube size={25} className="text-white" />
             </div>
           </Link>
-          <Link href="https://www.tiktok.com/@salopem" target="_blank" rel="noopener noreferrer" className="group">
+          <Link href="https://www.0iktok.com/@salopem" target="_blank" rel="noopener noreferrer" className="group">
             <div className="bg-black p-1.5 shadow-md transition-transform group-hover:scale-110">
-              <FaTiktok size={28} className="text-white" />
+              <FaTiktok size={25} className="text-white" />
             </div>
           </Link>
           <Link href="https://www.instagram.com/salopem_" target="_blank" rel="noopener noreferrer" className="group">
             <div className="bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 p-1.5 shadow-md transition-transform group-hover:scale-110">
-              <FaInstagram size={28} className="text-white" />
+              <FaInstagram size={25} className="text-white" />
             </div>
           </Link>
           <Link href="https://www.facebook.com/Salopem1" target="_blank" rel="noopener noreferrer" className="group">
             <div className="bg-[#1877F3] p-1.5 shadow-md transition-transform group-hover:scale-110">
-              <FaFacebookF size={28} className="text-white" />
+              <FaFacebookF size={25} className="text-white" />
             </div>
           </Link>
         </div>
-        <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group">
-          <div className="bg-[#25D366] p-1.5 shadow-md transition-transform group-hover:scale-110">
-            <BsWhatsapp size={28} className="text-white" />
-          </div>
-        </Link>
+        <div className="fixed right-0  bottom-8 gap-56 z-30 flex flex-col ">
+
+          <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group">
+            <div className="bg-[#25D366] p-1.5 shadow-md transition-transform group-hover:scale-110">
+              <BsWhatsapp size={25} className="text-white" />
+            </div>
+          </Link>
+        </div>
       </div>
       {/* Render CartSheet */}
       <CartSheet isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />

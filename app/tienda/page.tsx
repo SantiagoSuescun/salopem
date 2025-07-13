@@ -11,10 +11,10 @@ import { cosmeticProducts } from "@/constants"
 import { ChevronLeft, ChevronRight, Search, ShoppingCart, Star } from "lucide-react"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
-import { useMemo, useState, useEffect } from "react"
+import { useMemo, useState, useEffect, Suspense } from "react"
 import { useCartStore } from "@/store/cartStore"
 
-export default function CosmeticProductFilter() {
+function CosmeticProductFilterContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [searchTerm, setSearchTerm] = useState("")
@@ -158,7 +158,7 @@ export default function CosmeticProductFilter() {
                           setSearchTerm(e.target.value)
                           setCurrentPage(1)
                         }}
-                        
+                        className="focus:border-[#33d6d1ff] focus:ring-[#33d6d1ff]"
                       />
                     </div>
                   </div>
@@ -325,6 +325,14 @@ export default function CosmeticProductFilter() {
         </div>
       </div>
     </>
+  )
+}
+
+export default function CosmeticProductFilter() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Cargando...</div>}>
+      <CosmeticProductFilterContent />
+    </Suspense>
   )
 }
 

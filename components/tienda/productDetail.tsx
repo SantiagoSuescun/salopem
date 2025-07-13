@@ -68,9 +68,7 @@ export default function ProductDetail({ productId, onBack }: ProductDetailProps)
                   -{product.discount}%
                 </Badge>
               )}
-              <div className="absolute top-4 right-4 bg-purple-600 text-white px-3 py-2 rounded-full font-bold text-sm">
-                {product.rating}
-              </div>
+
 
               <div className="flex gap-2 items-center justify-center">
                 {product.images.slice(0, 4).map((image, index) => (
@@ -105,19 +103,9 @@ export default function ProductDetail({ productId, onBack }: ProductDetailProps)
             </div>
 
             {/* Features Icons */}
-            <div className="flex gap-6 mb-6">
-              {product.features.slice(0, 3).map((feature, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2">
-                    <div className="w-6 h-6 bg-purple-600 rounded-sm">{feature.icon}</div>
-                  </div>
-                  <span className="text-xs text-center text-gray-600 max-w-16">{feature.title}</span>
-                </div>
-              ))}
-            </div>
+
 
             {/* Price */}
-            <div className="text-3xl font-bold text-gray-800 mb-6">${product.priceNumber}</div>
 
             {/* Quantity and Add to Cart */}
             <div className="flex items-center gap-4 mb-6">
@@ -212,19 +200,12 @@ export default function ProductDetail({ productId, onBack }: ProductDetailProps)
                           -{relatedProduct.discount}%
                         </Badge>
                       )}
-                      {relatedProduct.rating && (
-                        <div className="absolute top-3 right-3 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-bold">
-                          {relatedProduct.rating}
-                        </div>
-                      )}
                     </div>
 
                     <div className="p-4 text-center">
                       <p className="text-xs text-gray-600 mb-1">{relatedProduct.category}</p>
                       <h3 className="font-bold text-purple-800 mb-2 text-sm">{relatedProduct.name}</h3>
-                      <div className="text-lg font-bold text-gray-800 mb-3">
-                        ${Math.floor(relatedProduct.priceNumber * 1000).toLocaleString()} COP
-                      </div>
+
                       <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg">
                         🛒 Agregar
                       </Button>
