@@ -258,7 +258,7 @@ export default function ResponsiveAnimatedCarousel() {
   ]
 
   return (
-    <div className="relative w-full h-[670px] sm:h-[600px] md:h-[650px] lg:h-[670px] overflow-visible rounded-xl lg:rounded-2xl shadow-xl lg:shadow-2xl">
+    <div className="relative w-full h-[800px] sm:h-[750px] md:h-[700px] lg:h-[670px] overflow-visible rounded-xl lg:rounded-2xl shadow-xl lg:shadow-2xl">
       {/* Iconos de redes sociales en la esquina superior derecha */}
 
       <AnimatePresence initial={false} custom={direction}>
