@@ -45,9 +45,9 @@ export default function CartSheet({ isOpen, onClose }: CartSheetProps) {
                             </Button>
                         </div>
                     ) : (
-                        <div className="space-y-4">
+                        <div>
                             {products.map((product) => (
-                                <div key={product.id} className="flex items-center gap-4 p-3 border rounded-lg bg-gray-50">
+                                <div key={product.id} className="flex items-center gap-4 p-3 border  bg-gray-50">
                                     <div className="relative w-16 h-16 flex-shrink-0">
                                         <Image
                                             src={product.image || "/placeholder.svg"}

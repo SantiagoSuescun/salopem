@@ -16,6 +16,9 @@ interface CartState {
   getTotal: () => number; // New function to get total price
   updateQuantity: (id: number, quantity: number) => void;
   removeProduct: (id: number) => void;
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 export const useCartStore = create<CartState>()(
@@ -69,11 +72,19 @@ export const useCartStore = create<CartState>()(
           return acc + numericPrice * p.quantity;
         }, 0);
       },
+      isCartOpen: false,
+      openCart: () => set({ isCartOpen: true }),
+      closeCart: () => set({ isCartOpen: false }),
     }),
     {
       name: "cart-storage", // nombre único para el localStorage
       storage: createJSONStorage(() => localStorage),
       skipHydration: true, // Evita problemas de hidratación
+      partialize: (state) => {
+        // Solo persiste los datos del carrito, NO el estado del modal
+        const { isCartOpen, openCart, closeCart, ...persisted } = state;
+        return persisted;
+      },
     }
   )
 );

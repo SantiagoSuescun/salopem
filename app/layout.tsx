@@ -3,8 +3,8 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/landing/Navbar";
 import CartHydration from "@/components/landing/cart-hydration";
-import { Toaster } from 'react-hot-toast';
-
+import { Toaster } from "react-hot-toast";
+import Footer from "@/components/landing/footer";
 
 const poppins = Poppins({
   variable: "--font-geist-mono",
@@ -24,16 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={` ${poppins.variable} antialiased overflow-x-hidden`}
-      >
+      <body className={` ${poppins.variable} antialiased overflow-x-hidden`}>
         <CartHydration />
         <Navbar />
-        <main className="mt-32">
-
-          {children}
-        </main>
-        <Toaster />
+        <main className="mt-32">{children}</main>
+        <Footer />
+        <Toaster position="bottom-right" />
       </body>
     </html>
   );

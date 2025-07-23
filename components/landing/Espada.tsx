@@ -15,7 +15,7 @@ export default function EspadaLaserBarra({ text, id }: { text: string; id?: stri
     <div
       ref={ref}
       id={id}
-      className="flex flex-col justify-center items-center bg-white h-16 sm:h-20 my-8 sm:my-12 px-4"
+      className="flex flex-col justify-center items-center  py-20"
     >
       {isInView && (
         <>
@@ -25,13 +25,13 @@ export default function EspadaLaserBarra({ text, id }: { text: string; id?: stri
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-purple-700 mb-4 sm:mb-6 uppercase text-center"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.1, ease: "easeOut" }}
             >
               {text}
             </motion.h2>
           )}
           {/* Barra animada */}
-          <div className="relative w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-[10px] sm:h-[12px] md:h-[13px] lg:h-[14px] overflow-visible">
+          <div className="relative w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-[30px] sm:h-[12px] md:h-[13px] lg:h-[14px] overflow-visible">
             {/* Mitad izquierda */}
             <motion.div
               initial={{ width: 0 }}

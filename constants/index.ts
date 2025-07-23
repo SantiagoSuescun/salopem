@@ -12,8 +12,8 @@ export const nav = [
   { name: "Tienda", url: "/tienda" },
   { name: "Productos", url: "/#productos" },
   { name: "Test capilar", url: "/#test-capilar" },
-  { name: "Sobre Nosotras", url: "/#sobre-nosotras" }, 
-  { name: "Blog", url: "/#blog" },
+  { name: "Sobre Nosotras", url: "/about" },
+  { name: "Blog", url: "/blog" },
   { name: "Mayoristas", url: "/#mayoristas" },
   { name: "Maquila", url: "/#maquila" },
 ];
@@ -22,7 +22,8 @@ export const cosmeticProducts = [
   {
     id: 1,
     name: "SHAMPOO",
-    category: ["HIDRATACIÓN PROFUNDA", "SALOPEM"],
+    category: "HIDRATACIÓN PROFUNDA",
+    brand: "SALOPEM",
     description:
       "Hidratación profunda con ácido hialurónico y vitamina E para una piel radiante",
     fullDescription:
@@ -63,7 +64,8 @@ export const cosmeticProducts = [
   {
     id: 2,
     name: "TÓNICO CAPILAR",
-    category: ["ANTICASPA", "SALOPEM"],
+    category: "ANTICASPA",
+    brand: "SALOPEM",
     description: " ¡Apto para todos los tipos de cabello!",
     fullDescription:
       "Este tónico combina ketoconazol, romero y ortiga para ofrecer un tratamiento eficaz que estimula el crecimiento del cabello y controla la caspa. Su fórmula ligera se absorbe rápidamente, brindando resultados visibles.",
@@ -91,7 +93,8 @@ export const cosmeticProducts = [
   {
     id: 3,
     name: "REPARADOR CAPILAR",
-    category: ["TRATAMIENTO", "SALOPEM"],
+    category: "TRATAMIENTO",
+    brand: "SALOPEM",
     description:
       " ¡Potencia la reparación de tu cabellocon el Reparador Capilar deSalopém! ",
     fullDescription:
@@ -120,10 +123,17 @@ export const cosmeticProducts = [
   {
     id: 4,
     name: "ACONDICIONADOR",
-    category: ["ANTI CAÍDA","KAMALA"],
-    description: "ideal para complementar el shampoo, ofrece una nutrición intensa.",
-    fullDescription: "Enriquecido con romero, cola de caballo, miel, árnica y quina, este acondicionador cremoso desenreda y suaviza tu cabello, dejándolo sedoso y manejable. ",
-    benefits: ["Hidratación profunda", "Definición de rizos", "Nutrición continua"],
+    category: "ANTI CAÍDA",
+    brand: "KAMALA",
+    description:
+      "ideal para complementar el shampoo, ofrece una nutrición intensa.",
+    fullDescription:
+      "Enriquecido con romero, cola de caballo, miel, árnica y quina, este acondicionador cremoso desenreda y suaviza tu cabello, dejándolo sedoso y manejable. ",
+    benefits: [
+      "Hidratación profunda",
+      "Definición de rizos",
+      "Nutrición continua",
+    ],
     price: "$30.000 ",
     peso: "500 ml",
     image: "Acondicionador_kamala_500ml-removebg-preview.webp",

@@ -24,5 +24,5 @@ function LayoutTienda({
         </div>
     );
 }
-
+    
 export default LayoutTienda

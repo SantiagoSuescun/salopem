@@ -110,16 +110,16 @@ export default function TestCapilar() {
           <motion.div
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
-            className="flex flex-col lg:flex-row items-center justify-center min-w-0 gap-y-10 w-full"
+            className="flex flex-col lg:flex-row items-center justify-center min-w-0  w-full"
           >
             {recommendedProducts.map((product, index) => {
               const brandName = getBrandNameFromLogoPath(product.logo)
-              return (
+              return (  
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   className="flex-shrink-0 flex flex-col items-center max-w-sm w-[90vw] md:w-[28vw] cursor-pointer" // Added cursor-pointer
-                  onClick={() => {
+                  onClick={() => {2
                     if (brandName) {
                       router.push(`/tienda?brand=${brandName}`) // Navigate with brand query param
                     }

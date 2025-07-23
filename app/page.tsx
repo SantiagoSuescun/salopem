@@ -28,7 +28,6 @@ export default function Home() {
       <Blog />
       <EspadaLaserBarra text="Síguenos en nuestras redes" />
       <SocialPhones />
-      <Footer />
     </>
   );
 }

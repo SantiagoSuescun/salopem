@@ -92,6 +92,7 @@ export default function ProductCarousel() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const total = products.length;
   const addProduct = useCartStore((state) => state.addProduct);
+  const openCart = useCartStore((state) => state.openCart);
 
   // Autoplay
   useEffect(() => {
@@ -212,14 +213,15 @@ export default function ProductCarousel() {
                 <div className="w-full flex justify-center">
                   <Button
                     className="mt-2 px-6 py-1 bg-purple-500 hover:bg-purple-500 text-white font-semibold rounded-lg text-xs"
-                    onClick={() =>
+                    onClick={() => {
                       addProduct({
                         id: product.id,
                         name: product.name,
                         price: product.price,
                         image: product.image,
-                      })
-                    }
+                      });
+                      openCart(); // <-- abre el modal
+                    }}
                   >
                     Agregar
                   </Button>

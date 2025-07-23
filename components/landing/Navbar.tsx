@@ -17,12 +17,11 @@ import CartSheet from "./cart-sheet"
 function Navbar() {
   const pathname = usePathname()
   const cartCount = useCartStore((state) => state.getCount())
-  const [isCartOpen, setIsCartOpen] = useState(false) // State to control cart sheet visibility
-  const [isHydrated, setIsHydrated] = useState(false)
-
-  useEffect(() => {
-    setIsHydrated(true)
-  }, [])
+  const isCartOpen = useCartStore((state) => state.isCartOpen);
+  const closeCart = useCartStore((state) => state.closeCart);
+  const openCart = useCartStore((state) => state.openCart);
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
 
   return (
     <div className="fixed z-50 top-0 left-0 w-full">
@@ -79,10 +78,10 @@ function Navbar() {
           </Button>
           <Button
             className="p-2 rounded-full bg-purple-100 hover:bg-purple-200 text-purple-700 transition-colors relative"
-            onClick={() => setIsCartOpen(true)} // Open cart sheet on click
+            onClick={openCart} // Open cart sheet on click
           >
             <ShoppingCart />
-            {isHydrated && cartCount > 0 && (
+            {isClient && cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white animate-pulse">
                 {cartCount}
               </span>
@@ -127,7 +126,7 @@ function Navbar() {
         </div>
       </div>
       {/* Render CartSheet */}
-      <CartSheet isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <CartSheet isOpen={isCartOpen} onClose={closeCart} />
     </div>
   )
 }
