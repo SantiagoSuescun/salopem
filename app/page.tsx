@@ -6,7 +6,7 @@ import AnimatedCarousel from "@/components/landing/CarouselBaner";
 import EspadaLaserBarra from "@/components/landing/espada";
 import SocialPhones from "@/components/landing/gallery";
 import Component from "@/components/landing/Product";
-import Services from "@/components/landing/services";
+import Services from "@/components/landing/Services";
 import TestCapilar from "@/components/landing/TestCapilar";
 
 export default function Home() {
