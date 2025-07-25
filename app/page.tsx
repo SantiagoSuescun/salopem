@@ -1,14 +1,12 @@
-"use client"
+"use client";
 import About from "@/components/landing/about";
 import BannerTest from "@/components/landing/BannerTest";
 import Blog from "@/components/landing/blog";
 import AnimatedCarousel from "@/components/landing/CarouselBaner";
-import EspadaLaserBarra from "@/components/landing/Espada";
-import Footer from "@/components/landing/footer";
+import EspadaLaserBarra from "@/components/landing/espada";
 import SocialPhones from "@/components/landing/gallery";
-import Navbar from "@/components/landing/Navbar";
 import Component from "@/components/landing/Product";
-import Services from "@/components/landing/Services";
+import Services from "@/components/landing/services";
 import TestCapilar from "@/components/landing/TestCapilar";
 
 export default function Home() {

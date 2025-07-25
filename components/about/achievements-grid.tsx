@@ -1,6 +1,6 @@
 // components/AchievementsGrid.jsx
 
-import EspadaLaserBarra from "../landing/Espada";
+import EspadaLaserBarra from "../landing/espada";
 import AchievementCard from "./achievement-card";
 
 const achievements = [

@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { cosmeticProducts } from "@/constants"
 import { useParams, useRouter } from "next/navigation"
 import { useCartStore } from "@/store/cartStore"
-import EspadaLaserBarra from "@/components/landing/Espada"
+import EspadaLaserBarra from "@/components/landing/espada"
 import toast from "react-hot-toast"
 
 export default function ProductDetail() {

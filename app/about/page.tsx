@@ -3,7 +3,7 @@
 import AchievementsGrid from "@/components/about/achievements-grid";
 import SectionWithImage from "@/components/about/section-with-image";
 import VisionMissionCard from "@/components/about/vision-mission-card";
-import EspadaLaserBarra from "@/components/landing/Espada";
+import EspadaLaserBarra from "@/components/landing/espada";
 
 export default function NosotrosPage() {
   return (

@@ -10,7 +10,7 @@ import {
 export const nav = [
   { name: "Cuidado capilar", url: "/#cuidado-capilar" },
   { name: "Tienda", url: "/tienda" },
-  { name: "Productos", url: "/#productos" },
+  { name: "Contacto", url: "/contacto" },
   { name: "Test capilar", url: "/#test-capilar" },
   { name: "Sobre Nosotras", url: "/about" },
   { name: "Blog", url: "/blog" },

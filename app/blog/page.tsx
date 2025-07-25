@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import EspadaLaserBarra from "@/components/landing/Espada";
+import EspadaLaserBarra from "@/components/landing/espada";
 
 const cards = [
   {
